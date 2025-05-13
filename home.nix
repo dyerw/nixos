@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 {
     home.username = "liam";
     home.homeDirectory = "/home/liam";
@@ -6,6 +6,9 @@
     home.packages = with pkgs; [
       neofetch
       yazi
+
+      # Apps
+      inputs.zen-browser.packages.${pkgs.system}.default
 
       #archives
       zip
@@ -64,6 +67,21 @@
           "$mod, k, movefocus, u"
           "$mod, l, movefocus, r"
         ];
+      };
+    };
+
+    xdg.desktopEntries = {
+      zen = {
+        type = "Application";
+        name = "Zen";
+        exec = "zen";
+        terminal = false;
+      };
+      discord = {
+        type = "Application";
+        name = "Discord";
+        exec = "dissent";
+        terminal = false;
       };
     };
 

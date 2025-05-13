@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, zen-browser, ... }@inputs: {
     nixosConfigurations.caliban = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
@@ -25,6 +25,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.users.liam = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
       ];
     };
