@@ -4,10 +4,12 @@
     home.username = "liam";
     home.homeDirectory = "/home/liam";
 
-    xresources.properties = {
-      "Xcursor.size" =  16;
-      "Xft.dpi" = 172;
+    home.pointerCursor = {
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
+      size = 24;
     };
+
     home.packages = with pkgs; [
       neofetch
       yazi
@@ -28,6 +30,7 @@
       userName = "Liam Dyer";
       userEmail = "dev@liamdyer.com";
     };
+    services.ssh-agent.enable = true;
     programs.starship = {
       enable = true;
     };
@@ -38,16 +41,19 @@
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
-        monitor = ",preferred,auto,2";
         "$mod" = "SUPER";
-        env = [
-          "LIBVA_DRIVER_NAME,radeonsi"
-        ];
+        cursor.no_hardware_cursors = 1;
+        monitor = "DP-1, 3200x2000@120, auto, 1.5";
         bind = [
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive"
           "$mod, SPACE, exec, rofi -show drun"
         ];
+        render.explicit_sync = 0;
+        misc = {
+          disable_hyprland_logo = true;
+          disable_splash_rendering = true;
+        };
       };
     };
 

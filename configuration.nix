@@ -38,6 +38,7 @@
   };
 
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -49,8 +50,6 @@
   };
 
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
     videoDrivers = ["amdgpu"];
   };
 
@@ -110,6 +109,12 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    LIBVA_DRIVER_NAME = "radeonsi";
+    WLR_RENDERER = "vulkan";
   };
   
 
