@@ -37,13 +37,21 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      amdvlk
+      libvdpau-va-gl
+    ];
+  };
 
   services.xserver = {
     layout = "us";
     xkbVariant = "";
+    videoDrivers = ["amdgpu"];
   };
 
   #services.xserver.desktopManager.xterm.enable = false;
@@ -92,6 +100,7 @@
     git
     vim
     wget
+    pciutils
     helix
     kitty
     rofi-wayland

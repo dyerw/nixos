@@ -35,12 +35,21 @@
       enable = true;
     };
 
-    # wayland.windowManager.hyprland = {
-    #   enable = true;
-    #   settings = {
-    #     "$mod" = "SUPER";
-    #   };
-    # };
+    wayland.windowManager.hyprland = {
+      enable = true;
+      settings = {
+        monitor = ",preferred,auto,2";
+        "$mod" = "SUPER";
+        env = [
+          "LIBVA_DRIVER_NAME,radeonsi"
+        ];
+        bind = [
+          "$mod, RETURN, exec, ghostty"
+          "$mod, Q, killactive"
+          "$mod, SPACE, exec, rofi -show drun"
+        ];
+      };
+    };
 
     home.stateVersion = "24.11";
     programs.home-manager.enable = true;    
