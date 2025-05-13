@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
     home.username = "liam";
@@ -19,6 +19,10 @@
       eza
       fzf
       dissent
+
+      # Fonts
+      font-awesome
+      nerd-fonts.jetbrains-mono
     ];
     programs.git = {
       enable = true;
@@ -47,6 +51,7 @@
     programs.waybar = {
       enable = true;
       systemd.enable = true;
+      settings = lib.importJSON ./waybar-minimal/src/config.jsonc;
     };
 
     programs.tofi = {
