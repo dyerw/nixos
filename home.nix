@@ -57,7 +57,7 @@
       enable = true;
       settings = {
         "$mod" = "SUPER";
-        monitor = "eDP-1, 3200x2000@120, auto, 1.333333";
+        monitor = "eDP-1, 3200x2000@120, auto, 1.6";
         bind = [
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive"
