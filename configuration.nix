@@ -115,6 +115,8 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     LIBVA_DRIVER_NAME = "radeonsi";
     WLR_RENDERER = "vulkan";
+    AMD_VULKAN_ICD = "RADV";
+    WLR_DRM_NOT_ATOMIC = "1";
   };
   
 

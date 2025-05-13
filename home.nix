@@ -42,17 +42,19 @@
       enable = true;
       settings = {
         "$mod" = "SUPER";
-        cursor.no_hardware_cursors = 1;
+        cursor.no_hardware_cursors = true;
         monitor = "DP-1, 3200x2000@120, auto, 1.5";
         bind = [
           "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive"
           "$mod, SPACE, exec, rofi -show drun"
         ];
-        render.explicit_sync = 0;
+        render.explicit_sync = 2;
         misc = {
           disable_hyprland_logo = true;
           disable_splash_rendering = true;
+          vfr = true;
+          vrr = 1;
         };
       };
     };
