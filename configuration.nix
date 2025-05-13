@@ -46,6 +46,7 @@
     extraPackages = with pkgs; [
       amdvlk
       libvdpau-va-gl
+      mesa.drivers
     ];
   };
 
@@ -56,7 +57,10 @@
   #services.xserver.desktopManager.xterm.enable = false;
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-gtk
+    pkgs.xdg-desktop-portal-hyprland
+  ];
   
   
 
@@ -116,7 +120,9 @@
     LIBVA_DRIVER_NAME = "radeonsi";
     WLR_RENDERER = "vulkan";
     AMD_VULKAN_ICD = "RADV";
-    WLR_DRM_NOT_ATOMIC = "1";
+    WLR_DRM_NO_ATOMIC = "1";
+    WLR_DRM_DEVICES = "/dev/dri/card0";
+    VDPAU_DRIVER = "radeonsi";
   };
   
 
