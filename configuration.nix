@@ -8,6 +8,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "caliban";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -106,25 +107,13 @@
     pciutils
     helix
     kitty
-    rofi-wayland
-    waybar
+    gnome-randr
   ];
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1";
-    LIBVA_DRIVER_NAME = "radeonsi";
-    WLR_RENDERER = "vulkan";
-    AMD_VULKAN_ICD = "RADV";
-    WLR_DRM_NO_ATOMIC = "1";
-    WLR_DRM_DEVICES = "/dev/dri/card0";
-    VDPAU_DRIVER = "radeonsi";
-  };
-  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
