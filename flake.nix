@@ -7,10 +7,14 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.caliban = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.caliban = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix

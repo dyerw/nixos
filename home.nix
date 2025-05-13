@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-
+{ config, pkgs, pkgs-unstable, lib, ... }:
 {
     home.username = "liam";
     home.homeDirectory = "/home/liam";
@@ -13,7 +12,7 @@
       xz
       unzip
 
-      #utils
+      # utils
       ripgrep
       jq
       eza
@@ -22,22 +21,15 @@
 
       # Fonts
       font-awesome
-      nerd-fonts.jetbrains-mono
+      jetbrains-mono
     ];
     programs.git = {
       enable = true;
       userName = "Liam Dyer";
       userEmail = "dev@liamdyer.com";
-      delta.enable = true;
     };
     programs.lazygit = {
       enable = true;
-      settings = {
-        git.paging = {
-          colorArg = "always";
-          pager = "delta --dark --paging=never";
-        };
-      };
     };
     services.ssh-agent.enable = true;
     services.dunst.enable = true;
@@ -51,7 +43,6 @@
     programs.waybar = {
       enable = true;
       systemd.enable = true;
-      settings = lib.importJSON ./waybar-minimal/src/config.jsonc;
     };
 
     programs.tofi = {
@@ -64,9 +55,14 @@
         "$mod" = "SUPER";
         monitor = "eDP-1, 3200x2000@120, auto, 1.6";
         bind = [
-          "$mod, RETURN, exec, ghostty"
           "$mod, Q, killactive"
           "$mod, SPACE, exec, tofi-drun --drun-launch=true"
+          "$mod, RETURN, exec, ghostty"
+          # VIM-style focus
+          "$mod, h, movefocus, l"
+          "$mod, j, movefocus, d"
+          "$mod, k, movefocus, u"
+          "$mod, l, movefocus, r"
         ];
       };
     };
