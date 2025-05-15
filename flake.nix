@@ -48,6 +48,7 @@
               imports = [
                 ./home
                 ./home/gui/core
+                ./home/terminal/core
               ];
             };
           }
