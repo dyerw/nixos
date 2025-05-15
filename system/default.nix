@@ -15,7 +15,9 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.fish;
   };
+  programs.fish.enable = true;
 
   # TODO: Say 10 Hail Stallmans in penance
   nixpkgs.config.allowUnfree = true;
@@ -32,6 +34,7 @@
     git
     helix
     wget
+    wev
   ];
 
   programs.hyprland = {

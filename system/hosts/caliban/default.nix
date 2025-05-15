@@ -16,6 +16,7 @@ in
   # It's nice to keep gnome around for when hyprland config goes sideways
   services.xserver.desktopManager.gnome.enable = true;
 
+  hardware.enableAllFirmware = true;
   hardware.graphics = {
     # Q: The docs say this is "enabled by default by the corresponding modules"
     # but the AMD GPU wiki page says "graphics acceleration does need to be enabled"
@@ -55,7 +56,14 @@ in
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    pulseaudio
+    pavucontrol
+    playerctl
+  ];
 
   # login screen
   services.greetd = {
