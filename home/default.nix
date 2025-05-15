@@ -18,6 +18,7 @@
     # Fonts
     font-awesome
     jetbrains-mono
+    cozette
   ];
 
   home.stateVersion = "24.11";

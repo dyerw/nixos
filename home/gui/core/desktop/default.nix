@@ -1,6 +1,7 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
+    inputs.hyprpanel.homeManagerModules.hyprpanel
     ./hyprland
   ];
 
@@ -8,16 +9,15 @@
     gtk.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size = 20;
   };
   gtk.enable = true;
 
-  # Notification service
-  services.dunst.enable = true;
-
-  programs.waybar = {
+  programs.hyprpanel = {
     enable = true;
     systemd.enable = true;
+    hyprland.enable = true;
+    overwrite.enable = true;
   };
 
   # App launcher

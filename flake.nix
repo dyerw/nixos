@@ -16,6 +16,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyperPanel/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +37,7 @@
         # If needed for other architectures, add here
       ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
+      pkgs = nixpkgs.legacyPackages.x86_64-linux.pkgs;
     in
     {
       # Formats nix code
@@ -46,6 +52,7 @@
             ./system
             ./system/hosts/caliban
 
+            { nixpkgs.overlays = [inputs.hyprpanel.overlay]; }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -65,6 +72,13 @@
           ];
         };
         # In theory we can define more hosts here...
+      };
+      devShells.x86_64-linux.default = pkgs.mkShell {
+        name = "nixos development shell";
+        buildInputs = with pkgs; [
+          nil
+          nixfmt-rfc-style
+        ];
       };
     };
 }
