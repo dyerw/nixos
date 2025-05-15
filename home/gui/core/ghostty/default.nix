@@ -2,6 +2,6 @@
 {
   programs.ghostty = {
     enable = true;
-    enableFishIntegration = true;   
+    enableFishIntegration = true;
   };
 }

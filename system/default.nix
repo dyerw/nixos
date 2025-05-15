@@ -11,13 +11,19 @@
 
   users.users.liam = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # TODO: Say 10 Hail Stallmans in penance
   nixpkgs.config.allowUnfree = true;
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # This is stuff we _always_ want to be able to use a system
   # Basically, I need to checkout repos, access the internet,
