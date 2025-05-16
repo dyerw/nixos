@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     dissent
+    fractal
 
     # Fonts
     font-awesome
