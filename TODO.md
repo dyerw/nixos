@@ -1,0 +1,9 @@
+- [ ] Wallpapers
+- [ ] Make tofi look good
+- [ ] nix-shell templates
+- [ ] Color unification
+- [ ] GTK theming
+- [ ] Hyprpanel bar/dashboard customization
+- [ ] direnv
+- [ ] hyprlock
+- [ ] hypridle
