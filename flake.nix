@@ -78,6 +78,9 @@
         buildInputs = with pkgs; [
           nil
           nixfmt-rfc-style
+          just
+          treefmt
+          yamlfmt
         ];
       };
     };
