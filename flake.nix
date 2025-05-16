@@ -52,7 +52,7 @@
             ./system
             ./system/hosts/caliban
 
-            { nixpkgs.overlays = [inputs.hyprpanel.overlay]; }
+            { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

@@ -22,8 +22,25 @@
     lazydocker
     wirelesstools
   ];
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   imports = [
     ./fish
     ./helix
   ];
+
+  home.shellAliases = {
+    cd = "z";
+    ls = "eza";
+    lzg = "lazygit";
+    lzd = "lazydocker";
+  };
+
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
 }

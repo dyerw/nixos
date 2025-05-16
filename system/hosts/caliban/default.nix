@@ -1,5 +1,5 @@
 # caliban specific configuration
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   hostName = "caliban";
 in
@@ -75,6 +75,8 @@ in
       };
     };
   };
+
+  security.pam.services.hyprlock = { };
 
   system.stateVersion = "24.11";
 }
