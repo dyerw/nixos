@@ -20,6 +20,8 @@
   };
   programs.fish.enable = true;
 
+  networking.extraHosts = "192.168.0.189 miranda";
+
   # TODO: Say 10 Hail Stallmans in penance
   nixpkgs.config.allowUnfree = true;
 

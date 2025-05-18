@@ -4,6 +4,6 @@
 - [ ] Color unification
 - [ ] GTK theming
 - [ ] Hyprpanel bar/dashboard customization
-- [ ] direnv
+- [x] direnv
 - [ ] hyprlock
 - [ ] hypridle

@@ -66,6 +66,7 @@
                     ./home
                     ./home/gui/core
                     ./home/terminal/core
+                    ./home/terminal/development
                   ];
                 };
             }

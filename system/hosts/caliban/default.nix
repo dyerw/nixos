@@ -25,11 +25,11 @@ in
     enable32Bit = true;
   };
 
-  # FIXME: Delete if this works fine without it, not clear if we need this
-  # when we're using wayland
-  # services.xserver = {
-  #   videoDrivers = ["amdgpu"];
-  # };
+  # Mount my NAS docker share folder
+  fileSystems."/mnt/miranda/docker" = {
+    device = "miranda:/volume1/docker";
+    fsType = "nfs";
+  };
 
   # TODO: Should this go here?
   xdg.portal = {

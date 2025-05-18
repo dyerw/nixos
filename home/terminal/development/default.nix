@@ -1,11 +1,10 @@
 { ... }:
 {
-  home.packages = [
-    # make-like command runner
-    just
-  ];
-
-  programs.fish.interactiveeShellInit = {
-    
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
+  
+  # TODO: Figure out how to source local fish files
+  # programs.fish.interactiveShellInit = [];
 }
