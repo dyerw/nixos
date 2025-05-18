@@ -11,6 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-colors.url = "github:misterio77/nix-colors";
+
     # Programs not in nixpkgs
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
@@ -58,6 +60,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.backupFileExtension = ".bak";
 
               home-manager.users.liam =
                 { ... }:

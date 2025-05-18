@@ -6,6 +6,10 @@
   ...
 }:
 {
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+  ];
+  colorScheme = inputs.nix-colors.colorSchemes.everforest-dark-hard;
   home.username = "liam";
   home.homeDirectory = "/home/liam";
 
@@ -20,6 +24,8 @@
     font-awesome
     jetbrains-mono
     cozette
+    jost
+    libre-baskerville
   ];
 
   home.stateVersion = "24.11";

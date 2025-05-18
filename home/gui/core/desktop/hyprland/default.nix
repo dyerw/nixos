@@ -1,7 +1,46 @@
-{ ... }:
+{ config, ... }:
 {
-  wayland.windowManager.hyprland = {
+  wayland.windowManager.hyprland = with config.colorScheme.palette; {
     enable = true;
+    settings = {
+      monitor = "eDP-1,3200x2000@128,auto,1.6";
+
+      general = {
+        gaps_in = 5;
+        gaps_out = 20;
+        border_size = 2;
+
+        "col.active_border" = "rgb(${base06})";
+        "col.inactive_border" = "rgb(${base00})";
+
+        resize_on_border = false;
+        layout = "dwindle";
+      };
+
+      decoration = {
+        rounding = 5;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          color = "rgba(1a1a1aee)";
+        };
+        blur = {
+          enabled = true;
+          size = 3;
+          passes = 1;
+          vibrancy = 0.1696;
+        };
+      };
+
+      misc = {
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
+      };
+    };
     extraConfig = builtins.readFile ./hyprland.conf;
   };
   programs.hyprlock = {
@@ -27,7 +66,7 @@
       background = [
         {
           monitor = "";
-          path = "screenshot";
+          path = "~/Pictures/wallpapers/everforest/mist_forest_1.png";
           blur_passes = 2;
           contrast = 1;
           brightness = 0.3;
