@@ -6,7 +6,40 @@
     userName = "Liam Dyer";
     userEmail = "dev@liamdyer.com";
   };
-  programs.starship.enable = true;
+
+  programs.starship = {
+    enable = true;
+    settings = {
+      # use nerd fonts
+      package.symbol = "󰏗 ";
+      rust.symbol = "󱘗 ";
+      c.symbol = " ";
+      # Unknown key error?
+      # cpp.symbol = " ";
+      cmake.symbol = " ";
+      directory.read_only = " 󰌾";
+      docker_context.symbol = " ";
+      elixir.symbol = " ";
+      elm.symbol = " ";
+      fennel.symbol = " ";
+      git_branch.symbol = " ";
+      git_commit.tag_symbol = "  ";
+      golang.symbol = " ";
+      haskell.symbol = " ";
+      haxe.symbol = " ";
+      hostname.ssh_symbol = " ";
+      julia.symbol = " ";
+      kotlin.symbol = " ";
+      lua.symbol = " ";
+      memory_usage.symbol = "󰍛 ";
+      meson.symbol = "󰔷 ";
+      nim.symbol = "󰆥 ";
+      nix_shell.symbol = " ";
+      nodejs.symbol = " ";
+      ocaml.symbol = " ";
+      zig.symbol = " ";
+    };
+  };
 
   # general utilites
   home.packages = with pkgs; [
