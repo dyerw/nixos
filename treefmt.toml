@@ -1,5 +1,5 @@
 # One CLI to format the code tree - https://github.com/numtide/treefmt
-excludes = [ "*.lock", "*.conf", "justfile" ]
+excludes = [ "*.lock", "*.conf", "justfile", ".direnv" ]
 
 [formatter.nixfmt]
 command = "nixfmt"

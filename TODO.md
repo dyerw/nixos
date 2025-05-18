@@ -5,5 +5,5 @@
 - [ ] GTK theming
 - [ ] Hyprpanel bar/dashboard customization
 - [x] direnv
-- [ ] hyprlock
-- [ ] hypridle
+- [x] hyprlock
+- [x] hypridle
