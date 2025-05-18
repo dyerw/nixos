@@ -361,7 +361,7 @@ config: {
     "theme.bar.buttons.workspaces.numbered_active_highlighted_text_color" = "#${base00}";
     "theme.bar.buttons.workspaces.hover" = "#${base02}";
     "theme.bar.buttons.workspaces.active" = "#${base08}";
-    "theme.bar.buttons.workspaces.occupied" = "#${base09}";
+    "theme.bar.buttons.workspaces.occupied" = "#${base08}";
     "theme.bar.buttons.workspaces.available" = "#${base0D}";
     "theme.bar.buttons.workspaces.border" = "#${base02}";
     "theme.bar.buttons.workspaces.background" = "#${base02}";
