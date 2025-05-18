@@ -65,6 +65,7 @@
                   imports = [
                     ./home
                     ./home/gui/core
+                    ./home/gui/music
                     ./home/terminal/core
                     ./home/terminal/development
                   ];

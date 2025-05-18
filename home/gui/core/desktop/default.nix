@@ -21,7 +21,7 @@
   };
 
   # App launcher
-  programs.tofi = {
+  programs.wofi = {
     enable = true;
   };
 
