@@ -10,3 +10,4 @@
 - [x] theme ghostty
 - [ ] theme zen?
 - [x] theme hyprland
+- [ ] standardize fonts
