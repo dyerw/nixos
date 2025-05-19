@@ -6,7 +6,6 @@
   home.username = "liam";
   home.homeDirectory = "/home/liam";
 
-
   xdg.enable = true;
   services.ssh-agent.enable = true;
 

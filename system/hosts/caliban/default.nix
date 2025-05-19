@@ -55,7 +55,6 @@ in
     fsType = "nfs";
   };
 
-
   # TODO: Should this go here?
   xdg.portal = {
     enable = true;
