@@ -79,7 +79,7 @@
         # In theory we can define more hosts here...
       };
       devShells.x86_64-linux.default = pkgs.mkShell {
-        name = "nixos development shell";
+        name = "nix";
         buildInputs = with pkgs; [
           nil
           nixfmt-rfc-style
