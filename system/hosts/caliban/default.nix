@@ -11,7 +11,7 @@ in
   stylix = {
     enable = true;
     base16Scheme = ./themes/everforest-base16.yaml;
-    image = ./walls/city_map.jpg;
+    image = ./walls/forest.png;
     autoEnable = true;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Classic";
