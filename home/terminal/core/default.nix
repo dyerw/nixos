@@ -8,7 +8,7 @@
   };
 
   programs.starship = {
-    enable = true;
+    # enable = true;
     settings = {
       # use nerd fonts
       package.symbol = "󰏗 ";

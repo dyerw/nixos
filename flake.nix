@@ -2,16 +2,14 @@
   description = "liam's nix configs";
 
   inputs = {
-    # Make stable and unstable available
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:nix-community/stylix/release-24.11";
+    stylix.url = "github:nix-community/stylix";
 
     # Programs not in nixpkgs
     zen-browser = {
