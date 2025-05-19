@@ -1,5 +1,5 @@
 # Here we define all NixOS config that applies to all systems
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     # file browser
     nemo
+    plexamp
   ];
   imports = [
     # window manager, lock screen, etc

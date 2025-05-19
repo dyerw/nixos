@@ -14,12 +14,6 @@ in
     ./hyprland
   ];
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 20;
-  };
   gtk.enable = true;
 
   programs.hyprpanel = {
@@ -29,7 +23,7 @@ in
     overwrite.enable = true;
     settings = {
       theme = {
-        # font.name = "";
+        font.name = "Ubuntu Sans";
       };
       layout = {
         "bar.layouts" = {
@@ -66,15 +60,15 @@ in
     inherit (hyprpanelTheme) override;
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [
-        "~/Pictures/wallpapers/everforest/mist_forest_1.png"
-      ];
-      wallpaper = [ "eDP-1,~/Pictures/wallpapers/everforest/mist_forest_1.png" ];
-    };
-  };
+  # services.hyprpaper = {
+  #   enable = true;
+  #   settings = {
+  #     preload = [
+  #       "~/Pictures/wallpapers/everforest/mist_forest_1.png"
+  #     ];
+  #     wallpaper = [ "eDP-1,~/Pictures/wallpapers/everforest/mist_forest_1.png" ];
+  #   };
+  # };
 
   # App launcher
   programs.wofi = {

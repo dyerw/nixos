@@ -11,7 +11,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-colors.url = "github:misterio77/nix-colors";
+    stylix.url = "github:nix-community/stylix/release-24.11";
 
     # Programs not in nixpkgs
     zen-browser = {
@@ -30,6 +30,7 @@
       self,
       nixpkgs,
       home-manager,
+      stylix,
       ...
     }@inputs:
     let
@@ -51,6 +52,7 @@
         caliban = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            stylix.nixosModules.stylix
             ./system
             ./system/hosts/caliban
 

@@ -8,6 +8,26 @@ in
     ./hardware-configuration.nix
   ];
 
+  stylix = {
+    enable = true;
+    base16Scheme = ./themes/everforest-base16.yaml;
+    image = ./walls/city_map.jpg;
+    autoEnable = true;
+    cursor.package = pkgs.bibata-cursors;
+    cursor.name = "Bibata-Modern-Classic";
+    cursor.size = 20;
+    fonts = {
+      monospace = {
+        package = pkgs.cozette;
+        name = "CozetteHiDpi";
+      };
+      sansSerif = {
+        package = pkgs.ubuntu-sans;
+        name = "Ubuntu Sans";
+      };
+    };
+  };
+
   # Q: inherit?
   networking.hostName = hostName;
 
@@ -30,6 +50,11 @@ in
     device = "miranda:/volume1/docker";
     fsType = "nfs";
   };
+  fileSystems."/mnt/miranda/data" = {
+    device = "miranda:/volume1/data";
+    fsType = "nfs";
+  };
+
 
   # TODO: Should this go here?
   xdg.portal = {

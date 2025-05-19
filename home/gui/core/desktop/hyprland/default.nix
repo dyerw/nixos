@@ -1,6 +1,6 @@
-{ config, ... }:
+{ ... }:
 {
-  wayland.windowManager.hyprland = with config.colorScheme.palette; {
+  wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = "eDP-1,3200x2000@128,auto,1.6";
@@ -9,9 +9,6 @@
         gaps_in = 5;
         gaps_out = 20;
         border_size = 2;
-
-        "col.active_border" = "rgb(${base06})";
-        "col.inactive_border" = "rgb(${base00})";
 
         resize_on_border = false;
         layout = "dwindle";
@@ -26,7 +23,6 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          color = "rgba(1a1a1aee)";
         };
         blur = {
           enabled = true;
@@ -45,61 +41,6 @@
   };
   programs.hyprlock = {
     enable = true;
-    settings = {
-      general = {
-        no_fade_in = true;
-        no_fade_out = true;
-        hide_cursor = false;
-        grace = 0;
-      };
-
-      animations = {
-        enabled = true;
-        bezier = "linear, 1, 1, 0, 0";
-        animation = [
-          "fadeIn, 1, 5, linear"
-          "fadeOut, 1, 5, linear"
-          "inputFieldDots, 1, 2, linear"
-        ];
-      };
-
-      background = [
-        {
-          monitor = "";
-          path = "~/Pictures/wallpapers/everforest/mist_forest_1.png";
-          blur_passes = 2;
-          contrast = 1;
-          brightness = 0.3;
-          vibrancy = 0.2;
-          vibrancy_darkness = 0.2;
-        }
-      ];
-
-      "input-field" = [
-        {
-          monitor = "";
-          size = "500, 60";
-          outline_thickness = 2;
-          dots_size = 0.2;
-          dost_spacing = 0.35;
-          dots_center = true;
-          outer_color = "rgba(0,0,0,0)";
-          inner_color = "rgba(0,0,0, 0.2)";
-          font_color = "rgb(255,255,255)";
-          fade_on_empty = false;
-          rounding = -1;
-          check_color = "rgb(204, 136, 34)";
-          placeholder_text = "";
-          hide_input = false;
-          position = "0, -200";
-          halign = "center";
-          valign = "center";
-        }
-      ];
-
-      label = [ ];
-
-    };
   };
   services.hypridle = {
     enable = true;
