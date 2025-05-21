@@ -29,23 +29,19 @@ in
         "bar.layouts" = {
           "*" = {
             "left" = [
-              "dashboard"
-              "workspaces"
-              "media"
-            ];
-            "middle" = [
               "cpu"
               "ram"
               "storage"
             ];
+            "middle" = [
+              "workspaces"
+            ];
             "right" = [
-              "systray"
               "volume"
               "bluetooth"
               "network"
               "battery"
               "clock"
-              "notifications"
             ];
           };
         };
@@ -54,6 +50,7 @@ in
         launcher.icon = "";
         clock = {
           format = "%I:%M %p";
+          showIcon = false;
         };
       };
     };
