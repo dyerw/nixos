@@ -53,6 +53,8 @@
     zip
     lazygit
     lazydocker
+    lazysql
+    docker-compose
     wirelesstools
   ];
 

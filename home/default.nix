@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     dissent
     fractal
+    logseq
 
     # Fonts
     font-awesome
