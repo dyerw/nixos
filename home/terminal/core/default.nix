@@ -56,6 +56,7 @@
     lazysql
     docker-compose
     wirelesstools
+    btop
   ];
 
   programs.zoxide = {

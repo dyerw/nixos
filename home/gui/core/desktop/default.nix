@@ -29,6 +29,7 @@ in
         "bar.layouts" = {
           "*" = {
             "left" = [
+              "power"
               "cpu"
               "ram"
               "storage"
@@ -37,6 +38,7 @@ in
               "workspaces"
             ];
             "right" = [
+              "hypridle"
               "volume"
               "bluetooth"
               "network"
@@ -56,16 +58,6 @@ in
     };
     inherit (hyprpanelTheme) override;
   };
-
-  # services.hyprpaper = {
-  #   enable = true;
-  #   settings = {
-  #     preload = [
-  #       "~/Pictures/wallpapers/everforest/mist_forest_1.png"
-  #     ];
-  #     wallpaper = [ "eDP-1,~/Pictures/wallpapers/everforest/mist_forest_1.png" ];
-  #   };
-  # };
 
   # App launcher
   programs.wofi = {

@@ -1,10 +1,10 @@
 # Core Graphical Applications
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     # file browser
     nemo
-    plexamp
+    brightnessctl
   ];
   imports = [
     # window manager, lock screen, etc
