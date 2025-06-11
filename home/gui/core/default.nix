@@ -7,6 +7,7 @@
     brightnessctl
     # for when websites are weird in firefox for w/e reason
     ungoogled-chromium
+    sqlitebrowser
   ];
   imports = [
     # window manager, lock screen, etc
