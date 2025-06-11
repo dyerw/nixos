@@ -32,9 +32,9 @@ in
   networking.hostName = hostName;
 
   # Desktop
-  services.xserver.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = true;
   # It's nice to keep gnome around for when hyprland config goes sideways
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   hardware.enableAllFirmware = true;
   hardware.graphics = {
@@ -70,7 +70,7 @@ in
   # Sound
   # Apparently pipewire is the hot new alternative to pulseaudio
   # Either way, we need something to make sound work
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   # PipeWire uses this to "acquire realtime priority"
   security.rtkit.enable = true;
   services.pipewire = {
