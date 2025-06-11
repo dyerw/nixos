@@ -1,13 +1,5 @@
-- [x] Wallpapers
-- [ ] Make wofi look good
-- [x] Color unification
-- [ ] GTK theming
-- [ ] Hyprpanel bar/dashboard customization
-- [x] direnv
-- [x] hyprlock
-- [x] hypridle
-- [ ] brightness controls??
-- [x] theme ghostty
-- [ ] theme zen?
-- [x] theme hyprland
-- [ ] standardize fonts
+- Make wofi look good
+- Make lock screen look good
+- Ditch hyprpanel, get a better bar
+- theme zen
+- standardize fonts
