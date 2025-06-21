@@ -25,6 +25,11 @@ in
         package = pkgs.ubuntu-sans;
         name = "Ubuntu Sans";
       };
+      sizes = {
+        applications = 18;
+        desktop = 18;
+        terminal = 18;
+      };
     };
   };
 
