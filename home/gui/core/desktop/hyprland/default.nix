@@ -3,7 +3,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      monitor = "eDP-1,3200x2000@128,auto,1.6";
+      monitor = [
+        "desc:Samsung Display Corp. 0x4178,3200x2000@128,auto,1.6"
+        "desc:Dell Inc. DELL U2723QE,preferred,auto-left,1.2"
+      ];
 
       general = {
         gaps_in = 3;
