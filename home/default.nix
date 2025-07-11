@@ -17,6 +17,7 @@
     # Fonts
     font-awesome
     jetbrains-mono
+    julia-mono
     cozette
     jost
     libre-baskerville

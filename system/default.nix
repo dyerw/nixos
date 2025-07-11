@@ -31,10 +31,19 @@
       "flakes"
     ];
     substituters = [
+      "https://cache.nixos.org/"
+      "https://agda-devshell.cachix.org"
       "https://nix-community.cachix.org"
+      "https://cache.iog.io"
+      "https://iohk.cachix.org"
     ];
     trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "agda-devshell.cachix.org-1:qPjcQUeeMNRXosSXoT9zWSwHG2TyGG75Uojfso6FHd8="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+      "cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+      "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
     ];
   };
 

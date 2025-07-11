@@ -9,12 +9,12 @@ in
   ];
 
   # Enable userland input for key-remapping with kanata
-  boot.kernelModules = ["uinput"];
+  boot.kernelModules = [ "uinput" ];
   hardware.uinput.enable = true;
   services.udev.extraRules = ''
     KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
   '';
-  users.groups.uinput = {};
+  users.groups.uinput = { };
   # Add the Kanata service user to necessary groups
   systemd.services.kanata-internalKeyboard.serviceConfig = {
     SupplementaryGroups = [
@@ -42,11 +42,9 @@ in
             caps @cap
             lctl @math-mode)
           (deflayermap (math-layer)
-            ;; "forall"
             f (unicode ∀)
-            ;; "natural"
             n (unicode ℕ)
-            ;; "qed"
+            z (unicode ℤ)
             q (unicode ∎)
 
             = (unicode ≡)
@@ -55,7 +53,6 @@ in
             [ (unicode ⟨)
             ] (unicode ⟩)
 
-            ;; Arrows w/ vim logic
             l (unicode →)
           )
         '';
@@ -159,7 +156,7 @@ in
       };
     };
   };
-  
+
   programs.steam.enable = true;
 
   security.pam.services.hyprlock = { };

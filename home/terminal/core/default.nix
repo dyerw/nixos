@@ -57,6 +57,8 @@
     docker-compose
     wirelesstools
     btop
+    nodejs_24
+    unzip
   ];
 
   programs.zoxide = {
