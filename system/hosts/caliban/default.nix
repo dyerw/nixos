@@ -31,31 +31,7 @@ in
           "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
         ];
         extraDefCfg = "process-unmapped-keys yes";
-        config = ''
-          (defsrc)
-          (defalias
-            ;; tap for esc, hold for lctl
-            cap (tap-hold 200 200 esc lctl)
-            math-mode (layer-while-held math-layer)
-          )
-          (deflayermap (base-layer)
-            caps @cap
-            lctl @math-mode)
-          (deflayermap (math-layer)
-            f (unicode ∀)
-            n (unicode ℕ)
-            z (unicode ℤ)
-            q (unicode ∎)
-
-            = (unicode ≡)
-
-            ;; Brackets
-            [ (unicode ⟨)
-            ] (unicode ⟩)
-
-            l (unicode →)
-          )
-        '';
+        config = builtins.readFile ./layout.kbd;
       };
     };
   };

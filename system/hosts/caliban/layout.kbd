@@ -1,0 +1,212 @@
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del kp* kp/
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc          kp+ kp- nlck
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \             kp7 kp8 kp9
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret                kp4 kp5 kp6
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                    kp1 kp2 kp3
+  lctl      lmet lalt      spc            ralt rmet left up down rght            kp0 kp. kprt
+)
+
+(defalias
+  ;; tap for esc, hold for lctl
+  cap (tap-hold 200 200 esc lctl)
+
+  ;; math-mode
+  mth (layer-while-held math-layer)
+
+  ;; greek-mode
+  grk (layer-while-held greek-layer)
+  gup (layer-while-held greek-upper-layer)
+
+  ;; superscript and subscript
+  sup (layer-while-held superscript-layer)
+  sub (layer-while-held subscript-layer)
+
+  ;; math
+  qed (unicode ∎)
+  lb  (unicode ⟨)
+  rb  (unicode ⟩)
+  frl (unicode ∀)
+  rar (unicode →)
+  int (unicode ℤ)
+  nat (unicode ℕ)
+
+  ;; lowercase greek
+  tht (unicode θ)
+  psi (unicode ψ)
+  eps (unicode ε)
+  rho (unicode ρ)
+  tau (unicode τ)
+  nu  (unicode υ)
+  iot (unicode ι)
+  omi (unicode ο)
+  pi  (unicode π)
+  alp (unicode α)
+  sig (unicode σ)
+  del (unicode δ)
+  phi (unicode φ)
+  gam (unicode γ)
+  eta (unicode η)
+  xi  (unicode ξ)
+  kap (unicode κ)
+  lam (unicode λ)  
+  zet (unicode ζ)
+  chi (unicode χ)
+  ome (unicode ω)
+  bet (unicode β)
+  mu  (unicode μ)
+
+  ;; uppercase greek
+  THT (unicode Θ)
+  PSI (unicode Ψ)
+  EPS (unicode Ε)
+  RHO (unicode Ρ)
+  TAU (unicode Τ)
+  NU  (unicode Ν)
+  IOT (unicode Ι)
+  OMI (unicode Ο)
+  PI  (unicode Π)
+  ALP (unicode Α)
+  SIG (unicode Σ)
+  DEL (unicode Δ)
+  PHI (unicode Φ)
+  GAM (unicode Γ)
+  ETA (unicode Η)
+  XI  (unicode Ξ)
+  KAP (unicode Κ)
+  LAM (unicode Λ)  
+  ZET (unicode Ζ)
+  CHI (unicode Χ)
+  OME (unicode Ω)
+  BET (unicode Β)
+  MU  (unicode Μ)
+
+  ;; superscript aliases
+  sp1 (unicode ¹)
+  sp2 (unicode ²)
+  sp3 (unicode ³)
+  sp4 (unicode ⁴)
+  sp5 (unicode ⁵)
+  sp6 (unicode ⁶)
+  sp7 (unicode ⁷)
+  sp8 (unicode ⁸)
+  sp9 (unicode ⁹)
+  sp0 (unicode ⁰)
+  sp- (unicode ⁻)
+  sp+ (unicode ⁺)
+  spw (unicode ʷ)
+  spe (unicode ᵉ)
+  spr (unicode ʳ)
+  spt (unicode ᵗ)
+  spy (unicode ʸ)
+  spu (unicode ᵘ)
+  spi (unicode ⁱ)
+  spo (unicode ᵒ)
+  spp (unicode ᵖ)
+  spL (unicode ⁽)
+  spR (unicode ⁾)
+  spa (unicode ᵃ)
+  sps (unicode ˢ)
+  spd (unicode ᵈ)
+  spf (unicode ᶠ)
+  spg (unicode ᵍ)
+  sph (unicode ʰ)
+  spj (unicode ʲ)
+  spk (unicode ᵏ)
+  spl (unicode ˡ)
+  spz (unicode ᶻ)
+  spx (unicode ˣ)
+  spc (unicode ᶜ)
+  spv (unicode ᵛ)
+  spb (unicode ᵇ)
+  spn (unicode ⁿ)
+  spm (unicode ᵐ)
+
+  ;; subscript aliases
+  sb1 (unicode ₁)
+  sb2 (unicode ₂)
+  sb3 (unicode ₃)
+  sb4 (unicode ₄)
+  sb5 (unicode ₅)
+  sb6 (unicode ₆)
+  sb7 (unicode ₇)
+  sb8 (unicode ₈)
+  sb9 (unicode ₉)
+  sb0 (unicode ₀)
+  sb- (unicode ₋)
+  sb+ (unicode ₊)
+  sbv (unicode ᵥ)
+  sbe (unicode ₑ)
+  sbr (unicode ᵣ)
+  sbt (unicode ₜ)
+  sbu (unicode ᵤ)
+  sbi (unicode ᵢ)
+  sbo (unicode ₒ)
+  sbp (unicode ₚ)
+  sbL (unicode ₍)
+  sbR (unicode ₎)
+  sba (unicode ₐ)
+  sbs (unicode ₛ)
+  sbh (unicode ₕ)
+  sbj (unicode ⱼ)
+  sbk (unicode ₖ)
+  sbl (unicode ₗ)
+  sbx (unicode ₓ)
+  sbn (unicode ₙ)
+  sbm (unicode ₘ)
+)
+
+(deflayer base-layer
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt ins  del kp* kp/
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc          kp+ kp- nlck
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \             kp7 kp8 kp9
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret                kp4 kp5 kp6
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft                    kp1 kp2 kp3
+  @mth      lmet @grk spc    ralt rmet left up down rght                         kp0 kp. kprt
+)
+
+(deflayer math-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _
+  _    @qed _    _    _    _    _    _    _    _    _    @lb  @rb  _              _    _    _
+  _    _    _    _    @frl _    _    _    _    @rar _    _    _                   _    _    _
+  @sup @int _    _    _    _    @nat _    _    _    _    _                        _    _    _
+  _         @sub _         _         _    _    _    _    _    _                   _    _    _
+)
+
+(deflayer greek-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _
+  _    @tht @psi @eps @rho @tau @nu  @iot @omi @pi  _    _    _    _              _    _    _
+  _    @alp @sig @del @phi @gam @eta @xi  @kap @lam _    _    _                   _    _    _
+  @gup @zet @chi @ome _    @bet @mu  _    _    _    _    _                        _    _    _
+  _         _    _         _         _    _    _    _    _    _                   _    _    _
+)
+
+(deflayer greek-upper-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _              _    _    _
+  _    @THT @PSI @EPS @RHO @TAU @NU  @IOT @OMI @PI  _    _    _    _              _    _    _
+  _    @ALP @SIG @DEL @PHI @GAM @ETA @XI  @KAP @LAM _    _    _                   _    _    _
+  _    @ZET @CHI @OME _    @BET @MU  _    _    _    _    _                        _    _    _
+  _         _    _         _         _    _    _    _    _    _                   _    _    _
+)
+
+(deflayer superscript-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @sp1 @sp2 @sp3 @sp4 @sp5 @sp6 @sp7 @sp8 @sp9 @sp0 @sp- @sp+ _              _    _    _
+  _    _    @spw @spe @spr @spt @spy @spu @spi @spo @spp @spL @spR _              _    _    _
+  _    @spa @sps @spd @spf @spg @sph @spj @spk @spl _    _    _                   _    _    _
+  _    @spz @spx @spc @spv @spb @spn @spm _    _    _    _                        _    _    _
+  _         _    _         _         _    _    _    _    _    _                   _    _    _
+)
+
+(deflayer subscript-layer
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @sb1 @sb2 @sb3 @sb4 @sb5 @sb6 @sb7 @sb8 @sb9 @sb0 @sb- @sb+ _              _    _    _
+  _    _    @sbv @sbe @sbr @sbt _    @sbu @sbi @sbo @sbp @sbL @sbR _              _    _    _
+  _    @sba @sbs _    _    _    @sbh @sbj @sbk @sbl _    _    _                   _    _    _
+  _    _    @sbx _    _    _    @sbn @sbm _    _    _    _                        _    _    _
+  _         _    _         _         _    _    _    _    _    _                   _    _    _
+)
+
