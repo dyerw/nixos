@@ -8,6 +8,9 @@
     # for when websites are weird in firefox for w/e reason
     ungoogled-chromium
     sqlitebrowser
+    vscode
+    beets
+    libreoffice-qt
   ];
   imports = [
     # window manager, lock screen, etc
